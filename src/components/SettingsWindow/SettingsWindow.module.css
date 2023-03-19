@@ -1,0 +1,80 @@
+.container{
+    height: 13rem;
+    width: 10rem;
+    background-color: #212121;
+    border-radius: .4rem;
+    font-size: .5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20rem;
+    justify-content: space-between;
+}
+
+.pashok{
+    width: 8rem;
+    border-radius: .3rem;
+    margin-top: .5rem;
+
+}
+
+.andruxa{
+    height: 7rem;
+    border-radius: .3rem;
+    margin-top: .5rem;
+}
+
+.name{
+    height: 1.5rem;
+    width: 8rem;
+    border-radius: .3rem;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: .2rem;
+
+
+}
+
+.buttonsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button{
+    border-radius: .3rem;
+    font-size: .5rem;
+    color: #e1e1e1;
+    background-color: #0a0a0a;
+    border: none;
+    height: 1.5rem;
+    width: 8rem;
+    margin-right: .2rem;
+    transition: .2s;
+    margin-bottom: .2rem;
+
+
+}
+
+.button:hover{
+    background-color: #121212;
+    border: none;
+}
+
+.button:active{
+    background-color: #151515;
+    border: none;
+}

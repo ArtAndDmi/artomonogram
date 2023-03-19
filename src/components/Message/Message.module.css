@@ -1,0 +1,34 @@
+.leftMessage{
+    background: linear-gradient(135deg, #ff9e13, #ff4141);
+    font-size: 1.2vw;
+    max-width: 10rem;
+    padding: .1rem .3rem;
+    margin: .1rem .1rem .1rem .2rem;
+    border-radius: .3rem .3rem .3rem .1rem;
+    text-align: left;
+    overflow-wrap: break-word;
+
+}
+.rightMessage{
+    background: linear-gradient(45deg, #3e0073, #34ddff);
+    font-size: 1.2vw;
+    max-width: 10rem;
+    padding: .1rem .3rem;
+    margin: .1rem .1rem .1rem 7.4rem;
+    border-radius: .3rem .3rem .1rem .3rem;
+    text-align: left;
+}
+
+.leftMessageContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+}
+
+.rightMessageContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: flex-start;
+}
