@@ -11,7 +11,6 @@ const SettingsWindow = () => {
 	const switchUser = () => dispatch(switchAuthorAction())
 	const authorId = useSelector((state: { authorId: number }) => state.authorId)
 	const usingServerData = useSelector((state: {takeDataFromServer: boolean}) => state.takeDataFromServer)
-	console.log(usingServerData)
 
 
 	return (
