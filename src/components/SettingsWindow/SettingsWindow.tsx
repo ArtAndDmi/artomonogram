@@ -36,10 +36,8 @@ const SettingsWindow = () => {
 				</div>
 				:
 				<div className={classes.buttonsContainer}>
-
 					<button className={classes.button} onClick={switchUser}>Сменить пользователя</button>
 					<button className={classes.button} onClick={getDataFromServer}>Взять данные с сервера</button>
-
 				</div>
 			}
 
