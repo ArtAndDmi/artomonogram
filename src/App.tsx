@@ -5,6 +5,8 @@ import SettingsWindow from "./components/SettingsWindow/SettingsWindow"
 
 
 function App() {
+
+
 	return (
 		<div className="App">
 			<MessengerWindow/>

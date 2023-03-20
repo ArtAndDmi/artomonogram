@@ -1,13 +1,9 @@
 import React from 'react'
 import classes from './Message.module.css'
+import type {message} from "../../types/Message"
 
-type props = {
-	body: string,
-	authorId: number,
-	id: number
-}
 
-const Message = ({body, authorId, id}: props) => {
+const Message = ({body, authorId, id}: message) => {
 	return (
 		<div>
 			{authorId === 1 ?

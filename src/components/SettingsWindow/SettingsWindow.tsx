@@ -3,17 +3,20 @@ import classes from './SettingsWindow.module.css'
 import pashok from '../../assests/Pashok.jpg'
 import andruxa from '../../assests/Andruxa.jpg'
 import {useDispatch, useSelector} from "react-redux"
+import {getDataFromServerAction, switchAuthorAction} from "../../store/Reducer"
 
 const SettingsWindow = () => {
 	const dispatch = useDispatch()
+	const getDataFromServer = () => dispatch(getDataFromServerAction())
+	const switchUser = () => dispatch(switchAuthorAction())
 	const authorId = useSelector((state: { authorId: number }) => state.authorId)
-
-	const changeUser = () => dispatch({type: 'SWITCH_AUTHOR'})
+	const usingServerData = useSelector((state: {takeDataFromServer: boolean}) => state.takeDataFromServer)
+	console.log(usingServerData)
 
 
 	return (
 		<div className={classes.container}>
-			{authorId === 0 ?
+			{authorId === 1 ?
 				<div className={classes.user}>
 					<img src={andruxa} alt="Андрюха" className={classes.andruxa}/>
 					<p className={classes.name}>Вы - Андрей Артамонов</p>
@@ -25,12 +28,22 @@ const SettingsWindow = () => {
 				</div>
 			}
 
+			{usingServerData ?
+				<div className={classes.buttonsContainer}>
 
-			<div className={classes.buttonsContainer}>
+					<button className={classes.button} onClick={switchUser}>Сменить пользователя</button>
+					<button className={classes.button} onClick={getDataFromServer}>Удалить данные с сервера</button>
 
-				<button className={classes.button} onClick={changeUser}>Сменить пользователя</button>
-				<button className={classes.button}>Взять данные с сервера</button>
-			</div>
+				</div>
+				:
+				<div className={classes.buttonsContainer}>
+
+					<button className={classes.button} onClick={switchUser}>Сменить пользователя</button>
+					<button className={classes.button} onClick={getDataFromServer}>Взять данные с сервера</button>
+
+				</div>
+			}
+
 		</div>
 	)
 }

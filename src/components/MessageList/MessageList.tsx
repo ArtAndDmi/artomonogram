@@ -1,18 +1,30 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import Message from "../Message/Message"
 import classes from './MessageList.module.css'
+import type {message} from '../../types/Message'
+import {findAllByDisplayValue} from "@testing-library/react"
 
-const MessageList = () => {
+type props = {
+	messages: message[]
+}
 
-	const messages: {body: string, id: number, authorId: number}[] = [
-		{body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore eos ex iusto nam nihil numquam quis sapiente sequi sint sunt?', authorId: 1, id: 1},
-		{body: 'Lorem ipsum dolor sit amet.', authorId: 0, id: 2},
-		{body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores cum ex itaque maiores, odio voluptas. Consectetur dolore itaque minima necessitatibus quae quas sequi tenetur! Excepturi maxime minima quaerat! Accusamus ad animi consequatur facilis magni nulla suscipit voluptates. Architecto consequuntur dignissimos doloremque enim iste numquam recusandae tempora totam vitae voluptatum?', authorId: 0, id: 3}
-	]
+const MessageList = ({messages}: props) => {
+	const messagesEndRef = useRef<null | HTMLDivElement>(null)
+
+	const scrollToBottom = () => {
+		messagesEndRef.current?.scrollIntoView()
+	}
+
+	useEffect(() => {
+		scrollToBottom()
+	}, [messages])
 
 	return (
 		<div className={classes.container}>
-			{messages.map(i => <Message body={i.body} id={i.id} authorId={i.authorId} key={i.id}/>)}
+			<div className={classes.messageContainer}>
+				{messages.map(i => i.body ? <Message body={i.body} id={i.id} authorId={i.authorId} key={i.id}/> : null)}
+				<div ref={messagesEndRef}/>
+			</div>
 		</div>
 	)
 }

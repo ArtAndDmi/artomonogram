@@ -1,8 +1,23 @@
 .container{
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    height: 10rem;
-    overflow-y: hidden;
-
+    margin-top: auto;
+    overflow-y: scroll;
 }
+
+.container::-webkit-scrollbar {
+    width: .5rem;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #0a0a0a;
+    border-radius: .5rem;
+    border: .2rem solid #212121;
+}
+
+.messages-container {
+    height: 100%;
+    max-height: 10rem;
+    overflow: auto;
+}
+
